@@ -44,6 +44,13 @@ const start = async () => {
   }
 };
 
+//  Run the queue services
+if (process.env.NODE_ENV !== "test") {
+  require("./workers/insertDataWorker");
+  require("./workers/sendEmailWorker");
+}
+
+
 start();
 
 // initiate socket io server
