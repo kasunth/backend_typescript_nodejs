@@ -34,11 +34,20 @@ e. Create  free redis account in https://app.redislabs.com/  and create  Redis d
    MONGODB_URI=''
    SENDGRID_API_KEY = ''
    SENDGRID_SENDER_EMAIL = ''
+   QUEUE_REDIS_HOST='<RedisDBConnectionString>'
+   QUEUE_REDIS_PORT='13952'
+   QUEUE_REDIS_USER_NAME='default'
+   QUEUE_REDIS_PASSWORD='<Password>'
 
 First, run the development server:
 
 ```bash
 npm run dev
+
+Second, run the unit test:
+
+```bash
+  npm run test
 
 Open [http://localhost:3001](http://localhost:3001) with postmen.
 
