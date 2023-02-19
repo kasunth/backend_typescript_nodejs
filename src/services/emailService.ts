@@ -28,7 +28,7 @@ sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`);
 
 
 
-const saveNotification = async (data: IEmailData) => {
+const pushNotification = async (data: IEmailData) => {
   const { to, subject, text, html } = data;
   const email = {
     to: to,
@@ -43,5 +43,5 @@ const saveNotification = async (data: IEmailData) => {
 };
 
 export default {
-  saveNotification,
+  pushNotification,
 };
