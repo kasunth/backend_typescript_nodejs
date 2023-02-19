@@ -4,7 +4,7 @@ import getResponse from '../helpers/apiResponse';
 
 const sendNofification = async (req: Request, res: Response) => {
   notificationService.saveNotification(req.body);
-  return getResponse(res, true, '200', {});
+  return getResponse(res, false, '200', {});
 };
 
 export default {
