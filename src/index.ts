@@ -6,8 +6,24 @@ import 'dotenv/config'
 import  dbConnection  from './config/database'
 import router from './routes/router';
 
+
+                               
+
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+// socket io server configuration
+import * as http from 'http';
+
+import { Server } from 'socket.io';
+const server = http.createServer();
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  }
+});
+
 
 // middleware setup
 app.use(cors());
@@ -29,4 +45,16 @@ const start = async () => {
 };
 
 start();
+
+// initiate socket io server
+io.on('connection', (socket) => {
+  console.log('a user connected');
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+  });
+});
+
+server.listen(3002, () => {
+  console.log('listening on *:3002');
+});
 
