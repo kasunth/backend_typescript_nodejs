@@ -4,7 +4,7 @@
   "description": "Build an asynchronous Hook API microservice to trigger Email",
   "main": "src/index.ts",
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "dev": "nodemon --config nodemon.json src/index.ts"
   },

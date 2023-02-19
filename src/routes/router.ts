@@ -13,7 +13,7 @@ router.get('/v', (req, res) => {
     '/api/webhook',
     notificationRequestValidation,
     validationMiddleware,
-    notificationController.sendNofification
+    notificationController.sendNotification
   );
 
 export default router;
