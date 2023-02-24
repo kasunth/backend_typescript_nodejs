@@ -7,7 +7,7 @@ import queueService from "./queueService";
 sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`);
 
  const sendEmail = async (data: IEmailData) => {
-  const { to, subject, text, html } = data;
+  const { to, subject, text, html } = data; // de-structure the object
 
   const msg = {
     to: to,
@@ -28,6 +28,7 @@ sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`);
 
 
 
+
 // const pushNotification = async (data: IEmailData) => {
 //   const { to, subject, text, html } = data;
 //   const email = {
@@ -42,7 +43,7 @@ sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`);
 //   return emailRepository.save(email);
 // };
 
-// Send data to the queue
+// Send data to the queue ( web api service)
 const pushNotification = async (data: IEmailData) => {
   const email = { ...data, delivered: false };
   return await queueService.add("insert_data", email);

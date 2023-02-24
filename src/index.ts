@@ -46,8 +46,8 @@ const start = async () => {
 
 //  Run the queue services
 if (process.env.NODE_ENV !== "test") {
-  require("./workers/insertDataWorker");
-  require("./workers/sendEmailWorker");
+  require("./workers/insertDataWorker"); // consumer 
+  require("./workers/sendEmailWorker");  // consumer 
 }
 
 

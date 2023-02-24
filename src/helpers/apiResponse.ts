@@ -4,11 +4,11 @@ import statusCodes from '../config/statusCodes';
 const getResponse = (
   res: Response,
   type: boolean,
-  statusCode: string,
+  statusCode: number,
   data: object,
   message?: string
 ) => {
-  return res.status(200).json({
+  return res.status(statusCode).json({
     status_code: statusCode,
     error: type,
     message: message || statusCodes[statusCode],
